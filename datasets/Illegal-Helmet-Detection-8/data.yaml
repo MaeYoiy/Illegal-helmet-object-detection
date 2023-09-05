@@ -1,0 +1,14 @@
+names:
+- helmet
+- illegal_helmet
+- no_helmet
+nc: 3
+roboflow:
+  license: CC BY 4.0
+  project: illegal-helmet-detection
+  url: https://universe.roboflow.com/suranaree-university-xjb3n/illegal-helmet-detection/dataset/8
+  version: 8
+  workspace: suranaree-university-xjb3n
+test: ../test/images
+train: Illegal-Helmet-Detection-8/train/images
+val: Illegal-Helmet-Detection-8/valid/images
