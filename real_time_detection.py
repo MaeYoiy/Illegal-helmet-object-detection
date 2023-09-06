@@ -3,7 +3,7 @@ import cv2
 from ultralytics import YOLO
 
 #model_path = 'yolov8l_100e.pt'
-model_path = 'D:/Graduation_Project/Illegal-helmet-object-detection/runs/detect/train10/weights/last.pt'
+model_path = 'D:/Graduation_Project/Illegal-helmet-object-detection/runs/detect/train10/weights/best.pt'
 #model_path = os.path.join('.', 'runs', 'detect', 'train', 'weights', 'last.pt')
 
 #Load model
