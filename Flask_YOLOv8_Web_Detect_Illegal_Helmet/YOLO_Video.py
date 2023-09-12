@@ -10,7 +10,7 @@ def video_detection(path_x):
     frame_height=int(cap.get(4))
     #out=cv2.VideoWriter('output.avi', cv2.VideoWriter_fourcc('M', 'J', 'P','G'), 10, (frame_width, frame_height))
 
-    model=YOLO("../YOLO-Weights/bestlast.pt")
+    model=YOLO("D:/Graduation_Project/Illegal-helmet-object-detection/runs/detect/train10/weights/best.pt")
     classNames = ['Helmet', 'illegal_helmet', 'no_helmet']
     while True:
         success, img = cap.read()
