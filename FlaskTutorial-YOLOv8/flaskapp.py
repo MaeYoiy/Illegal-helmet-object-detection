@@ -1,5 +1,4 @@
 # Install Flask on your system by writing
-#!pip install Flask
 #Import all the required libraries
 #Importing Flask
 #render_template--> To render any html file, template
