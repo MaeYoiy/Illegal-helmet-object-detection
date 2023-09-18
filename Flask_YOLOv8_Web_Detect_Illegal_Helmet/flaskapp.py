@@ -64,6 +64,7 @@ def home():
 def webcam():
     session.clear()
     return render_template('ui.html')
+
 @app.route('/FrontPage', methods=['GET','POST'])
 def front():
     # Upload File Form: Create an instance for the Upload File Form

@@ -7,7 +7,7 @@ import os
 
 VIDEOS_DIR = os.path.join('.', 'videos')
 
-video_path = os.path.join(VIDEOS_DIR, 'D:/Graduation_Project/Illegal-helmet-object-detection/Videos/test_vid2.mp4')
+video_path = os.path.join(VIDEOS_DIR, 'D:/Graduation_Project/Illegal-helmet-object-detection/Videos/test3.mp4')
 video_path_out = '{}_out.mp4'.format(video_path)
 
 cap = cv2.VideoCapture(video_path)
