@@ -1,0 +1,51 @@
+body{
+    color:white;
+    margin:0px;
+    padding:0px;
+}
+header.feature-box.top{
+    background-color:black;
+    height:100px;
+    margin:0px;
+    padding:20px;
+    text-align:center;
+}
+header.feature-box.second{
+    background-color:blue;
+    height:50px;
+    text-align:center;
+    margin-top:-25px;
+}
+.features{
+    background-color:black;
+    width: 900px;
+    height: 700px;
+    border-radius: 35px;
+    object-fit: contain;
+    margin:20px;
+}
+section.col-sm{
+    background-color:black;
+    width: 1000px;
+    height: 650px;
+    border-radius: 35px;
+    object-fit: contain;
+    margin:40px;
+}
+
+img{
+    width: 900px;
+    height: 600px;
+    border-radius: 35px;
+    object-fit: contain;
+    margin:40px;
+}
+
+.new{
+    color:black;
+    margin:0px;
+    padding:10px;
+    background-color:green;
+    margin:0px;
+    margin-top:-10px;
+}
