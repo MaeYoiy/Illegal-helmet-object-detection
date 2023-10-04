@@ -124,7 +124,7 @@ img {
     /* มีการจัดตำแหน่งภายในรูปภาพ เช่น ปุ่มกดไปซ้ายขวา */
     position: relative;
 
-    max-width: 1320px;
+    max-width: 1140px;
     margin: 0 auto;
 }
 

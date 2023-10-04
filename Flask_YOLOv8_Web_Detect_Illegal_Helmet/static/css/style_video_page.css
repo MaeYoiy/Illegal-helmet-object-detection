@@ -24,13 +24,31 @@ header.feature-box.second{
     object-fit: contain;
     margin:20px;
 }
-section.col-sm{
+/* section.col-sm{
     background-color:black;
     width: 1000px;
     height: 650px;
     border-radius: 35px;
     object-fit: contain;
     margin:40px;
+} */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* ให้เริ่มจากด้านบนของ container */
+    align-items: center; /* ให้ยืนตรงกลางแนวนอน */
+    /* height: 100vh; ให้ความสูงเท่ากับความสูงของหน้าจอ */
+    padding-top: 40px; /* เพิ่มค่า padding ด้านบน */
+    padding-bottom: 50px;
+}
+
+.col-sm {
+    background-color: black;
+    width: 1000px;
+    height: 650px;
+    border-radius: 35px;
+    object-fit: contain;
 }
 
 img{
