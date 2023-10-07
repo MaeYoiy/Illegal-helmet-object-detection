@@ -2,7 +2,28 @@ body {
     font-family:Helvetica, sans-serif;
     margin:0px;
     padding:0px;
-}
+    /* 2. เพิ่ม URL ของรูปภาพใน background-image
+    background-image: url('');
+    /* 3. กำหนดความสูงของพื้นหลัง (ถ้าต้องการ) 
+    background-size: cover; /* ให้รูปภาพขยายหรือย่อให้เต็มพื้นที่ 
+    background-repeat: no-repeat; /* ไม่ให้รูปภาพซ้ำซ้อน 
+    background-attachment: fixed;  รูปภาพติดตามหน้าเว็บ */
+} 
+body::after {
+    content: ""; /* ใส่เนื้อหาว่าง */
+    position: fixed; /* ตั้งค่าตำแหน่งให้เป็น fixed สำหรับพื้นหลัง */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://plus.unsplash.com/premium_photo-1673240367277-e1d394465b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80');
+    opacity: 0.45;
+    z-index: -1; /* ตั้งค่า z-index เพื่อให้ pseudo-element อยู่หลัง body content */
+    background-size: cover; /* ปรับภาพ bg ให้พอดีกับจอ */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* รูปภาพติดตามหน้าเว็บ */
+  }
 header.feature-box.right {
     background-color:black;
     color:white;
@@ -122,11 +143,20 @@ img {
 /* Position the image container (needed to position the left and right arrows) */
 .container {
     /* มีการจัดตำแหน่งภายในรูปภาพ เช่น ปุ่มกดไปซ้ายขวา */
-    position: relative;
+    /* position: relative;
 
-    max-width: 992px;
-    margin: 0 auto;
+    max-width: 65%;*/
+    margin: 0 auto; 
+
+    position: relative;
+    max-width: 80%;
+    /* min-height: 100vh; */
 }
+
+
+
+
+
 
 /*Hide the images by default */
 .mySlides {
@@ -205,4 +235,104 @@ img {
     background-color: #222;
     padding: 2px 16px;
     color: white;
+}
+
+/* card */
+/* Content & Card */
+.content {
+    width: 100%;
+    margin: 700px auto;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    /* justify-content: center; /* จัดให้องค์ประกอบอยู่กึ่งกลางแนวนอน */
+    /* align-items: center; จัดให้องค์ประกอบอยู่กึ่งกลางแนวตั้ง */
+
+}
+
+.content .header,.grid-card {
+    width: 50%;
+    position: relative;
+}
+
+.content .header {
+    color: white;
+    padding: 20px;
+}
+
+.content .header h3 {
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+}
+
+.content .header h3 i {
+    color: orange;
+}
+
+.content .header h1 {
+    font-size: 4rem;
+}
+
+.content .header p{
+    opacity: .6;
+}
+
+.grid-card {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 25px;
+}
+
+.grid-card .box {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 25px;
+    transition: .4s;
+    position: relative;
+}
+
+.bg1 {
+    background-image: url('https://images.unsplash.com/photo-1518789244264-e916944e373d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1763&q=80');
+}
+
+.bg2 {
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1773&q=80');
+}
+
+.bg3 {
+    background-image: url('https://images.unsplash.com/photo-1502085671122-2d218cd434e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1852&q=80');
+}
+
+.bg4 {
+    background-image: url('https://images.unsplash.com/photo-1682685797795-5640f369a70a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80');
+}
+
+.content .box h2 {
+    position: absolute;
+    bottom: 7px;
+    left: 15px;
+    color: white;
+}
+
+.container .box:hover {
+    transform: translateY(-15px);
+}
+
+.header button{
+    border: solid 3px white;
+    background: none;
+    color: white;
+    font-size: 2rem;
+    padding: 5px 15px; /*เว้นระยะห่าง บนล่าง 5,ซ้ายขวา 15 จากขอบใน border ของ button*/
+    margin: 15px 0; /*เว้นระยะห่าง บนล่าง 15,ซ้ายขวา 0 จากขอบนอก border ของ button*/
+    cursor: pointer; /*เปลี่ยนรูปเมาส์เป็นรูปมือ เมื่อเอาเมาส์ไปโดน button*/
+}
+
+.header button:hover {
+    background: white; /*พื้นหลัง button สีขาว*/
+    color: black; /*สี font สีดำ*/
 }
