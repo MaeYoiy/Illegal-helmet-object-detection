@@ -1,5 +1,5 @@
 body {
-    font-family:Helvetica, sans-serif;
+    font-family:Helvetica, sans-serif, Arial;
     margin:0px;
     padding:0px;
     /* 2. เพิ่ม URL ของรูปภาพใน background-image
@@ -8,7 +8,8 @@ body {
     background-size: cover; /* ให้รูปภาพขยายหรือย่อให้เต็มพื้นที่ 
     background-repeat: no-repeat; /* ไม่ให้รูปภาพซ้ำซ้อน 
     background-attachment: fixed;  รูปภาพติดตามหน้าเว็บ */
-} 
+}
+
 body::after {
     content: ""; /* ใส่เนื้อหาว่าง */
     position: fixed; /* ตั้งค่าตำแหน่งให้เป็น fixed สำหรับพื้นหลัง */
@@ -17,13 +18,19 @@ body::after {
     width: 100%;
     height: 100%;
     background-image: url('https://plus.unsplash.com/premium_photo-1673240367277-e1d394465b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80');
-    opacity: 0.45;
+    filter: brightness(45%);
     z-index: -1; /* ตั้งค่า z-index เพื่อให้ pseudo-element อยู่หลัง body content */
     background-size: cover; /* ปรับภาพ bg ให้พอดีกับจอ */
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; /* รูปภาพติดตามหน้าเว็บ */
-  }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* menu */
 header.feature-box.right {
     background-color:black;
     color:white;
@@ -31,14 +38,15 @@ header.feature-box.right {
     padding:5px;
     text-align:right;
 }
-header.feature-box.below {
+
+/* header.feature-box.below {
     height:800px;
     background-color:blue;
     margin-top:-30px;
     background-image:url("../static/images/1.png");
     background-size:100%;
     background-position:center;
-}
+} */
 ul {
     list-style:none;
     padding:0px;
@@ -63,11 +71,17 @@ header a {
     height:80px;
     margin:40px;
     padding:0px;
-    font-size:40px;
+    font-size:30px;
     background-color:gray;
     text-align:center;
     color:black;
+    border-radius: 25px;
+    display: flex; /* จัดให้เป็น flex container */
+    align-items: center; /* จัดให้ข้อความตรงกลางในแนวตั้ง */
+    justify-content: center; /* จัดให้ข้อความตรงกลางในแนวนอน */
 }
+
+/* features of yolo */
 
 .features {
     background:white;
@@ -76,6 +90,7 @@ header a {
     flex-direction:row;
     padding:20px;
 }
+
 .features figure {
     /*background:pink;*/
     width:400px;
@@ -87,6 +102,8 @@ header a {
     border-radius:10%;
     width:400px;
 }
+
+/* subpart 1 & 2 */
 div.main {
     display:flex;
     margin:40px;
@@ -104,42 +121,12 @@ div.main {
     border-radius:4%;
     width:800px;
 }
-    /* .contactpage{
-    margin:20px;
-    } */
-#textbox {
-   font-size: 18pt;
-    height: 42px;
-    width : 1000px;
-}
-#textboxes {
-   font-size: 18pt;
-    height: 42px;
-    width : 1000px;
-}
-footer {
-    background-color:black;
-    text-align:center;
-    margin:0px;
-    padding:0px;
-    color:white;
-    font-size:20px;
-}
-
-
-/* body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-} */
-
-/* * {
-    box-sizing: border-box;
-} */
 
 img {
     vertical-align: middle;
 }
 
+/* slide image */
 /* Position the image container (needed to position the left and right arrows) */
 .container {
     /* มีการจัดตำแหน่งภายในรูปภาพ เช่น ปุ่มกดไปซ้ายขวา */
@@ -149,14 +136,9 @@ img {
     margin: 0 auto; 
 
     position: relative;
-    max-width: 80%;
+    max-width: 75%;
     /* min-height: 100vh; */
 }
-
-
-
-
-
 
 /*Hide the images by default */
 .mySlides {
@@ -166,6 +148,9 @@ img {
 
 .mySlides img {
     height: 600px;
+    /* border-top-left-radius: 25px;
+    border-top-right-radius: 25px; */
+    /* border-radius: 25px 25px 0 0; */
 }
 
 /* add a pointer when hovering over the thumbnail images */
@@ -241,7 +226,7 @@ img {
 /* Content & Card */
 .content {
     width: 100%;
-    margin: 700px auto;
+    margin: 650px auto;
     position: absolute;
     top: 60%;
     left: 50%;
@@ -252,30 +237,30 @@ img {
 
 }
 
-.content .header,.grid-card {
+.content .description,.grid-card {
     width: 50%;
     position: relative;
 }
 
-.content .header {
+.content .description {
     color: white;
     padding: 20px;
 }
 
-.content .header h3 {
+.content .description h3 {
     font-size: 2.3rem;
     letter-spacing: 2px;
 }
 
-.content .header h3 i {
+.content .description h3 i {
     color: orange;
 }
 
-.content .header h1 {
+.content .description h1 {
     font-size: 4rem;
 }
 
-.content .header p{
+.content .description p{
     opacity: .6;
 }
 
@@ -322,7 +307,7 @@ img {
     transform: translateY(-15px);
 }
 
-.header button{
+.description button{
     border: solid 3px white;
     background: none;
     color: white;
@@ -332,7 +317,7 @@ img {
     cursor: pointer; /*เปลี่ยนรูปเมาส์เป็นรูปมือ เมื่อเอาเมาส์ไปโดน button*/
 }
 
-.header button:hover {
+.description button:hover {
     background: white; /*พื้นหลัง button สีขาว*/
     color: black; /*สี font สีดำ*/
 }
